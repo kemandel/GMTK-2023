@@ -67,7 +67,7 @@ public class HumanItemShop : MonoBehaviour
             plotFree = false;
 
         //can buy
-        if (levelManager.gold < human.basePrice)
+        if (levelManager.gold < human.basePrice || !plotFree)
             gameObject.GetComponent<Button>().interactable = false;
         else if (levelManager.gold > human.basePrice && interactableTier && plotFree)
             gameObject.GetComponent<Button>().interactable = true;
