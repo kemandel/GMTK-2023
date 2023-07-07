@@ -21,7 +21,7 @@ public class HumanItemShop : MonoBehaviour
     void Start()
     {
 
-        humanImage = GetComponentInChildren<Image>();
+        humanImage = GetComponentsInChildren<Image>()[1];
         priceText = GetComponentInChildren<TMP_Text>();
         switch (tier)
         {
