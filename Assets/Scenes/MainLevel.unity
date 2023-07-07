@@ -304,6 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usable: 0
+  human: {fileID: 0}
 --- !u!212 &99541429
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -969,6 +970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usable: 1
+  human: {fileID: 0}
 --- !u!212 &696239536
 SpriteRenderer:
   m_ObjectHideFlags: 0
