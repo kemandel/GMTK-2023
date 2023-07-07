@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    const int TIER_ONE = 0;
-    const int TIER_TWO = 30;
-    const int TIER_THREE = 60;
-    const int TIER_FOUR = 100;
+    public const int TIER_ONE = 0;
+    public const int TIER_TWO = 30;
+    public const int TIER_THREE = 60;
+    public const int TIER_FOUR = 100;
 
     /// <summary>
     /// The amount of gold the player has
