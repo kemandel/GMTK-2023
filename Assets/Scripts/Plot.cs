@@ -12,7 +12,27 @@ public class Plot : MonoBehaviour
     /// <summary>
     /// The human in the plot
     /// </summary>
-    public Human human = null;
+    private Human human;
+
+    /// <summary>
+    /// The human in the plot
+    /// </summary>
+    public Human Human {
+        get
+        {
+            return human;
+        }
+    }
+
+    /// <summary>
+    /// Adds a human to the plot if the plot is empty
+    /// </summary>
+    /// <param name="human"></param>
+    public void AddNewHuman(Human human)
+    {
+        Human newHuman = GameObject.Instantiate(human, this.transform.position, Quaternion.identity);
+        this.human = human;
+    }
 
     void Start()
     {

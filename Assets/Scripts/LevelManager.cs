@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour
         {
             for (int i = 0; i < plots.Length; i++)
             {
-                if (plots[i].usable && plots[i].human == null) return i;
+                if (plots[i].usable && plots[i].Human == null) return i;
             }
             return -1;
         }
@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
     public int AddToNextPlot(Human human){
         int index = PlotAvailable;
         if (index > -1){
-            plots[index].human = human;
+            plots[index].AddNewHuman(human);
         }
         return index;
     }
