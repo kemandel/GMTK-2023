@@ -71,10 +71,17 @@ public class HumanItemShop : MonoBehaviour
             gameObject.GetComponent<Button>().interactable = false;
         else if (levelManager.gold > human.basePrice && interactableTier && plotFree)
             gameObject.GetComponent<Button>().interactable = true;
+
+        //font color
+        if (costToUnlock > levelManager.humansFreed)
+            priceText.color = Color.red;
+        else
+            priceText.color = Color.black;
     }
     //call OnClick, only works if button is interactable 
     public void BuyHuman()
     {
         levelManager.AddToNextPlot(human); //why does this have a return index and also how does game know to put human in correct plot
+        levelManager.gold -= human.basePrice;
     }
 }

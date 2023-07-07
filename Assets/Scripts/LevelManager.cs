@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
+    public TMP_Text goldText;
+    public TMP_Text peopleFreedText;
     public const int TIER_ONE = 0;
     public const int TIER_TWO = 30;
     public const int TIER_THREE = 60;
@@ -23,10 +27,17 @@ public class LevelManager : MonoBehaviour
     /// All the plots in the level
     /// </summary>
     private Plot[] plots;
-    
+
     /// <summary>
     /// Returns the index of the next available plot, or -1 if no empty plot was found
     /// </summary>
+    /// 
+
+    private void Update()
+    {
+        goldText.text = gold.ToString();
+        peopleFreedText.text = "TOTAL HUMANS FREED: " + humansFreed.ToString();
+    }
     public int PlotAvailable 
     {
         get 
