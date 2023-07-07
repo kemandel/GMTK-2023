@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class Plot : MonoBehaviour
 {
-    public bool usable;
+    /// <summary>
+    /// Is the plot usable by the player?
+    /// </summary>
+    public bool usable = false;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// The human in the plot
+    /// </summary>
+    public Human human = null;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (!usable){
-            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, .5f);
+        // if not usable, dim the plot's color 
+        if (!usable)
+        {
+            SpriteRenderer sRenderer = GetComponent<SpriteRenderer>();
+            sRenderer.color = new Color(sRenderer.color.r, sRenderer.color.g, sRenderer.color.b, .5f);
         }
     }
 }
