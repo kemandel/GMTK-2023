@@ -30,6 +30,7 @@ public class Plot : MonoBehaviour
     /// <param name="human"></param>
     public void AddNewHuman(Human human)
     {
+        if (Human != null) return;
         Human newHuman = GameObject.Instantiate(human, this.transform.position, Quaternion.identity);
         this.human = human;
     }
