@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    const int TIER_ONE = 0;
+    const int TIER_TWO = 30;
+    const int TIER_THREE = 60;
+    const int TIER_FOUR = 100;
+
     /// <summary>
     /// The amount of gold the player has
     /// </summary>
-    public float gold;
+    public int gold;
+
+    /// <summary>
+    /// The amount of humans the player has freed
+    /// </summary>
+    public int humansFreed;
 
     /// <summary>
     /// All the plots in the level
