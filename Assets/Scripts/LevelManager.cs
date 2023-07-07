@@ -5,6 +5,11 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     /// <summary>
+    /// The amount of gold the player has
+    /// </summary>
+    public float gold;
+
+    /// <summary>
     /// All the plots in the level
     /// </summary>
     private Plot[] plots;
