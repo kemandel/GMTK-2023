@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6177192124622325296}
-  - component: {fileID: 8870351784437696611}
   - component: {fileID: 3817218819258766286}
   - component: {fileID: -4101090407026553139}
+  - component: {fileID: 8870351784437696611}
   m_Layer: 0
   m_Name: Human
   m_TagString: Human
@@ -34,24 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8870351784437696611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4022457457913468374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc29a71e3c2217242a8298ff40270744, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopSprite: {fileID: 21300000, guid: 0779ad3feec52124e97114bcbb12ef13, type: 3}
-  spriteShort: {fileID: 21300000, guid: 9125c204f566db048a92ebcb64d9d14a, type: 3}
-  spriteLong: {fileID: 21300000, guid: c7aa62ae78ffca0498c89e5f45f94c0e, type: 3}
-  growthSpeed: 3
-  basePrice: 4
-  goldValue: 1
 --- !u!212 &3817218819258766286
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -130,3 +112,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8870351784437696611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4022457457913468374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc29a71e3c2217242a8298ff40270744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopSprite: {fileID: 21300000, guid: 0779ad3feec52124e97114bcbb12ef13, type: 3}
+  spriteShort: {fileID: 21300000, guid: 9125c204f566db048a92ebcb64d9d14a, type: 3}
+  spriteLong: {fileID: 21300000, guid: c7aa62ae78ffca0498c89e5f45f94c0e, type: 3}
+  growthSpeed: 3
+  basePrice: 4
+  goldValue: 1
