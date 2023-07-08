@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6177192124622325296}
   - component: {fileID: 8870351784437696611}
   - component: {fileID: 3817218819258766286}
+  - component: {fileID: -4101090407026553139}
   m_Layer: 0
   m_Name: Human
-  m_TagString: Untagged
+  m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,10 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopSprite: {fileID: 21300000, guid: 0779ad3feec52124e97114bcbb12ef13, type: 3}
   spriteShort: {fileID: 21300000, guid: 9125c204f566db048a92ebcb64d9d14a, type: 3}
-  spriteLong: {fileID: 0}
+  spriteLong: {fileID: 21300000, guid: c7aa62ae78ffca0498c89e5f45f94c0e, type: 3}
   growthSpeed: 3
   basePrice: 2
   harvest: 1
+  canHarvest: 0
 --- !u!212 &3817218819258766286
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -103,3 +105,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &-4101090407026553139
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4022457457913468374}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.48, y: 0.48}
+    newSize: {x: 0.48, y: 0.48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

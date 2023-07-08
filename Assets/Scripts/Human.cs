@@ -27,11 +27,57 @@ public class Human : MonoBehaviour
     /// <summary>
     /// The amount of gold gained from cutting the hair
     /// </summary>
-    public int harvest;
+    public int goldValue;
+
+
+    /// <summary>
+    /// Whether or not the human can be harvested for gold
+    /// </summary>
+    private bool canHarvest;
 
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<SpriteRenderer>().sprite = spriteShort;
+        StartCoroutine(GrowCoroutine());
+    }
+
+    /// <summary>
+    /// Main Coroutine for growing the human's hair
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator GrowCoroutine()
+    {
+        while (true)
+        {
+            float timeStart = Time.time;
+            float timePast = 0f;
+            while (timePast < growthSpeed)
+            {
+                yield return null;
+                timePast = Time.time - timeStart;
+            }
+
+            GetComponent<SpriteRenderer>().sprite = spriteLong;
+            canHarvest = true;
+
+            while (canHarvest)
+            {
+                yield return null;
+            }
+        }
+
+    }
+
+    /// <summary>
+    /// Function to harvest the human's hair
+    /// </summary>
+    public void Harvest()
+    {
+        if (canHarvest){
+            FindObjectOfType<LevelManager>().AddGold(goldValue);
+            GetComponent<SpriteRenderer>().sprite = spriteShort;
+            canHarvest = false;
+        }
     }
 }

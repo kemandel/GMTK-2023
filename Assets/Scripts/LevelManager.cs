@@ -14,13 +14,25 @@ public class LevelManager : MonoBehaviour
     public const int TIER_FOUR = 100;
 
     /// <summary>
-    /// The amount of gold the player has
+    /// The amount of gold the player has, accessable to other classes
     /// </summary>
-    public int gold;
+    public int Gold 
+    {
+        get 
+        {
+            return gold;
+        }
+    }
+
+    /// <summary>
+    /// The amount of gold the player has, private
+    /// </summary>
+    private int gold;
 
     /// <summary>
     /// The amount of humans the player has freed
     /// </summary>
+    [HideInInspector]
     public int humansFreed;
 
     /// <summary>
@@ -28,16 +40,33 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     private Plot[] plots;
 
-    /// <summary>
-    /// Returns the index of the next available plot, or -1 if no empty plot was found
-    /// </summary>
-    /// 
+    private void Awake() 
+    {
+        plots = GameObject.FindObjectsOfType<Plot>();
+    }
+
+    private void Start()
+    {
+        gold = 4;
+    }
 
     private void Update()
     {
-        goldText.text = gold.ToString();
+        goldText.text = Gold.ToString();
         peopleFreedText.text = "TOTAL HUMANS FREED: " + humansFreed.ToString();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("clicked!");
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward, 10);
+            if (hit.collider != null && hit.collider.CompareTag("Human"))
+                hit.collider.GetComponent<Human>().Harvest();
+        }
     }
+
+    /// <summary>
+    /// Returns the index of the next available plot, or -1 if no empty plot was found
+    /// </summary>
     public int PlotAvailable 
     {
         get 
@@ -48,11 +77,6 @@ public class LevelManager : MonoBehaviour
             }
             return -1;
         }
-    }
-
-    private void Awake() 
-    {
-        plots = GameObject.FindObjectsOfType<Plot>();
     }
 
     /// <summary>
@@ -82,5 +106,13 @@ public class LevelManager : MonoBehaviour
         {
             return null;
         }
+    }
+
+    /// <summary>
+    /// Add gold to the player's gold amount
+    /// </summary>
+    /// <param name="value"></param>
+    public void AddGold(int value){
+        gold += value;
     }
 }

@@ -67,9 +67,9 @@ public class HumanItemShop : MonoBehaviour
             plotFree = false;
 
         //can buy
-        if (levelManager.gold < human.basePrice || !plotFree)
+        if (levelManager.Gold < human.basePrice || !plotFree)
             gameObject.GetComponent<Button>().interactable = false;
-        else if (levelManager.gold > human.basePrice && interactableTier && plotFree)
+        else if (levelManager.Gold > human.basePrice && interactableTier && plotFree)
             gameObject.GetComponent<Button>().interactable = true;
 
         //font color
@@ -82,6 +82,6 @@ public class HumanItemShop : MonoBehaviour
     public void BuyHuman()
     {
         levelManager.AddToNextPlot(human); //why does this have a return index and also how does game know to put human in correct plot
-        levelManager.gold -= human.basePrice;
+        levelManager.AddGold(-human.basePrice);
     }
 }
