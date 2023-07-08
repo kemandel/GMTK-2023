@@ -26,9 +26,11 @@ public class DayNightCycle : MonoBehaviour
     private int nightDayTracker = 1;
     public TMP_Text clockText;
 
+    private TransitionUI transitionUI;
     // Start is called before the first frame update
     void Start()
     {
+        transitionUI = FindObjectOfType<TransitionUI>();
         hour = startingHourDay;
         StartDay();
         StartCoroutine(TimeCoroutine());
@@ -83,11 +85,13 @@ public class DayNightCycle : MonoBehaviour
     {
         Debug.Log("It's Day Time!");
         FindObjectOfType<SheepPlayerController>().canMove = false;
+        transitionUI.DayUI();
     }
 
     void StartNight()
     {
         Debug.Log("It's Night Time!");
         FindObjectOfType<SheepPlayerController>().canMove = true;
+        transitionUI.NightUI();
     }
 }

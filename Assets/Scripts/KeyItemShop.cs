@@ -10,8 +10,6 @@ public class KeyItemShop : MonoBehaviour
     private TMP_Text keyCostText;
 
     private int keyIndex = 0;
-
-    public int keysOwnedAmount;
     public TMP_Text keysOwnedText;
 
     private LevelManager levelManager;
@@ -25,7 +23,7 @@ public class KeyItemShop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        keysOwnedText.text = keysOwnedAmount.ToString();
+        keysOwnedText.text = levelManager.keys.ToString();
         keyCostText.text = "$" + keyPrices[keyIndex];
 
         if (levelManager.Gold < keyPrices[keyIndex])
@@ -47,6 +45,6 @@ public class KeyItemShop : MonoBehaviour
             return;
         levelManager.AddGold(-keyPrices[keyIndex]);
         keyIndex++;
-        keysOwnedAmount++;
+        levelManager.keys++;
     }
 }
