@@ -52,6 +52,7 @@ public class SheepPlayerController : MonoBehaviour
 
         while (timePast < transitionTime/2)
         {
+            yield return null;
             timePast = Time.time - timeStart;
             float ratio = timePast / (transitionTime / 2);
             float a = Mathf.Lerp(0, 1 * UIAlpha, Mathf.Clamp01(ratio));
