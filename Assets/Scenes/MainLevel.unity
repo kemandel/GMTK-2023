@@ -976,7 +976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 0
   speed: 5
-  UIAlpha: 0.6
+  UIAlpha: 0.8
 --- !u!50 &54129404
 Rigidbody2D:
   serializedVersion: 4
@@ -2796,7 +2796,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: -2032350381, guid: 8b7521616fdaaa249990e4958b65b493, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
