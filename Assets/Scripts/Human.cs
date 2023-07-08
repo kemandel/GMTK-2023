@@ -66,7 +66,6 @@ public class Human : MonoBehaviour
                 yield return null;
             }
         }
-
     }
 
     /// <summary>

@@ -84,10 +84,12 @@ public class DayNightCycle : MonoBehaviour
     void StartDay()
     {
         Debug.Log("It's Day Time!");
+        FindObjectOfType<SheepPlayerController>().canMove = false;
     }
 
     void StartNight()
     {
         Debug.Log("It's Night Time!");
+        FindObjectOfType<SheepPlayerController>().canMove = true;
     }
 }
