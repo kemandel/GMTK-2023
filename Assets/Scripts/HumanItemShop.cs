@@ -21,8 +21,8 @@ public class HumanItemShop : MonoBehaviour
     void Start()
     {
 
-      //  humanImage = GetComponentsInChildren<Image>()[1];
-        //priceText = GetComponentInChildren<TMP_Text>();
+        humanImage = GetComponentsInChildren<Image>()[1];
+        priceText = GetComponentInChildren<TMP_Text>();
         switch (tier)
         {
             case 1:
@@ -41,8 +41,8 @@ public class HumanItemShop : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
 
         //update shop icon with human info
-       // humanImage.sprite = human.shopSprite;
-        //priceText.text = "$" + human.basePrice;
+        humanImage.sprite = human.shopSprite;
+        priceText.text = "$" + human.basePrice;
 
         if (costToUnlock > levelManager.humansFreed) //haven't unlocked this option yet
         {
@@ -57,7 +57,6 @@ public class HumanItemShop : MonoBehaviour
         //unlock this tier
         if (!interactableTier && costToUnlock <= levelManager.humansFreed) 
         {
-            //this.gameObject.GetComponent<Button>().interactable = true;
             interactableTier = true;
         }
 
@@ -73,10 +72,10 @@ public class HumanItemShop : MonoBehaviour
             gameObject.GetComponent<Button>().interactable = true;
 
         //font color
-       // if (levelManager.Gold < human.basePrice)
-         //   priceText.color = Color.red;
-       // else
-           // priceText.color = Color.black;
+        if (levelManager.Gold < human.basePrice)
+            priceText.color = Color.red;
+        else
+            priceText.color = Color.black;
     }
     //call OnClick, only works if button is interactable 
     public void BuyHuman()

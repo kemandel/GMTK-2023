@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DayNightCycle : MonoBehaviour
 {
@@ -22,12 +23,27 @@ public class DayNightCycle : MonoBehaviour
     [HideInInspector]
     public int hour;
 
+    private int nightDayTracker = 1;
+    public TMP_Text clockText;
+
     // Start is called before the first frame update
     void Start()
     {
         hour = startingHourDay;
         StartDay();
         StartCoroutine(TimeCoroutine());
+    }
+
+    private void Update()
+    {
+        if (hour + 1 == 12)
+            clockText.text = hour + 1 + ":00 PM";
+        else if (hour + 1 == 24)
+            clockText.text = hour + 1 - 12 + ":00 AM";
+        else if (hour + 1 > 12)
+            clockText.text = hour + 1 - 12 + ":00 PM";
+        else
+            clockText.text = hour + 1 + ":00 AM";
     }
 
     /// <summary>
@@ -48,6 +64,7 @@ public class DayNightCycle : MonoBehaviour
             }
 
             hour++;
+            nightDayTracker++;
             hour %= 24;
 
             Debug.Log("Current Hour: " + hour);
