@@ -13,6 +13,8 @@ public class LevelManager : MonoBehaviour
     public const int TIER_THREE = 60;
     public const int TIER_FOUR = 100;
 
+    public int startingGold;
+
     /// <summary>
     /// The amount of gold the player has, accessable to other classes
     /// </summary>
@@ -47,7 +49,7 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        gold = 4;
+        gold = startingGold;
     }
 
     private void Update()
@@ -55,9 +57,10 @@ public class LevelManager : MonoBehaviour
         goldText.text = Gold.ToString();
         peopleFreedText.text = "TOTAL HUMANS FREED: " + humansFreed.ToString();
 
+        // Checks if the player clicked
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("clicked!");
+            // What to do if a collider is hit where the mouse is
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward, 10);
             if (hit.collider != null && hit.collider.CompareTag("Human"))
                 hit.collider.GetComponent<Human>().Harvest();

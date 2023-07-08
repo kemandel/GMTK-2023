@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56e6fed00009f44c984c782c0edc6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usable: 0
+  usable: 1
 --- !u!212 &99541429
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2537,7 +2537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldText: {fileID: 949651369}
   peopleFreedText: {fileID: 1606782814}
-  gold: 8
+  startingGold: 0
   humansFreed: 0
 --- !u!4 &1986111466
 Transform:
