@@ -29,13 +29,22 @@ public class KeyItemShop : MonoBehaviour
         keyCostText.text = "$" + keyPrices[keyIndex];
 
         if (levelManager.Gold < keyPrices[keyIndex])
+        {
             gameObject.GetComponent<Button>().interactable = false;
+            keyCostText.color = Color.red;
+        }
         else
+        {
             gameObject.GetComponent<Button>().interactable = true;
+            keyCostText.color = Color.black;
+        }
+           
     }
     
     public void BuyKey()
     {
+        if (keyIndex >= keyPrices.Length)
+            return;
         levelManager.AddGold(-keyPrices[keyIndex]);
         keyIndex++;
         keysOwnedAmount++;
