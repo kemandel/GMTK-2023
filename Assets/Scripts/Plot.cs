@@ -37,7 +37,7 @@ public class Plot : MonoBehaviour
     {
         if (Human != null) return;
         Human newHuman = GameObject.Instantiate(human, this.transform.position, Quaternion.identity);
-        this.human = human;
+        this.human = newHuman;
         locked = true;
     }
 
@@ -48,9 +48,11 @@ public class Plot : MonoBehaviour
     public bool FreeHuman()
     {
         if (Human == null) return false;
-        Destroy(Human);
+        if (FindObjectOfType<LevelManager>().keys <= 0) return false;
+        Destroy(human.gameObject);
         locked = false;
         human = null;
+        FindObjectOfType<LevelManager>().keys -= 1;
         return true;
     }
 
