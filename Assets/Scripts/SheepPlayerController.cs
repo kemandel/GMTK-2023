@@ -10,6 +10,7 @@ public class SheepPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         if (canMove)
         {
             Vector2 direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
