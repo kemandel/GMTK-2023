@@ -32,7 +32,6 @@ public class DayNightCycle : MonoBehaviour
     {
         transitionUI = FindObjectOfType<TransitionUI>();
         hour = startingHourDay;
-        StartDay();
         StartCoroutine(TimeCoroutine());
     }
 
@@ -85,13 +84,13 @@ public class DayNightCycle : MonoBehaviour
     {
         Debug.Log("It's Day Time!");
         FindObjectOfType<SheepPlayerController>().canMove = false;
-        transitionUI.DayUI();
+        StartCoroutine(transitionUI.DayUICoroutine());
     }
 
     void StartNight()
     {
         Debug.Log("It's Night Time!");
         FindObjectOfType<SheepPlayerController>().canMove = true;
-        transitionUI.NightUI();
+        StartCoroutine(transitionUI.NightUICoroutine());
     }
 }
