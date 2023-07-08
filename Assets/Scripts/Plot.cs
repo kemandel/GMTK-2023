@@ -36,7 +36,7 @@ public class Plot : MonoBehaviour
     public void AddNewHuman(Human human)
     {
         if (Human != null) return;
-        Human newHuman = GameObject.Instantiate(human, this.transform.position, Quaternion.identity);
+        Human newHuman = GameObject.Instantiate(human, this.transform.position + Vector3.up * .5f, Quaternion.identity);
         Sprite[] possibleSkins = Resources.LoadAll<Sprite>("Skin/");
         newHuman.GetComponentsInChildren<SpriteRenderer>()[1].sprite = possibleSkins[Random.Range(0, possibleSkins.Length)];
         this.human = newHuman;

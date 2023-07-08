@@ -33,7 +33,22 @@ public class SheepPlayerController : MonoBehaviour
 
     public IEnumerator DayCoroutine()
     {
-        yield return null;
+        canMove = false;
+        float transitionTime = FindObjectOfType<TransitionUI>().transitionTime;
+        yield return new WaitForSeconds(transitionTime/2);
+
+        float timeStart = Time.time;
+        float timePast = 0f;
+        Color oldColor = gameObject.GetComponentsInChildren<SpriteRenderer>()[1].color;
+
+        while (timePast < transitionTime/2)
+        {
+            yield return null;
+            timePast = Time.time - timeStart;
+            float ratio = timePast / (transitionTime / 2);
+            float a = Mathf.Lerp(1 * UIAlpha, 0, Mathf.Clamp01(ratio));
+            gameObject.GetComponentsInChildren<SpriteRenderer>()[1].color = new Color(oldColor.r, oldColor.g, oldColor.b, a);
+        }
     }
 
     /// <summary>
