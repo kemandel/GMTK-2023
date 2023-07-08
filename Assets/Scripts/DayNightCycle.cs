@@ -96,6 +96,7 @@ public class DayNightCycle : MonoBehaviour
         if (runningCoroutine != null)
         {
             StopCoroutine(runningCoroutine);
+            Debug.Log("stopped Coroutine");
         }
         StartCoroutine(player.DayCoroutine());
         StartCoroutine(transitionUI.DayUICoroutine());

@@ -61,7 +61,7 @@ public class HumanItemShop : MonoBehaviour
             interactableTier = true;
         }
 
-        if (levelManager.PlotAvailable != -1)
+        if (levelManager.PlotUsable != -1)
             plotFree = true;
         else
             plotFree = false;
