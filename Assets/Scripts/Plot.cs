@@ -37,6 +37,8 @@ public class Plot : MonoBehaviour
     {
         if (Human != null) return;
         Human newHuman = GameObject.Instantiate(human, this.transform.position, Quaternion.identity);
+        Sprite[] possibleSkins = Resources.LoadAll<Sprite>("Skin/");
+        newHuman.GetComponentsInChildren<SpriteRenderer>()[1].sprite = possibleSkins[Random.Range(0, possibleSkins.Length)];
         this.human = newHuman;
         locked = true;
     }

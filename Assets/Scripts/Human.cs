@@ -37,7 +37,7 @@ public class Human : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = spriteShort;
+        GetComponentInChildren<SpriteRenderer>().sprite = spriteShort;
         StartCoroutine(GrowCoroutine());
     }
 
@@ -57,7 +57,7 @@ public class Human : MonoBehaviour
                 timePast = Time.time - timeStart;
             }
 
-            GetComponent<SpriteRenderer>().sprite = spriteLong;
+            GetComponentInChildren<SpriteRenderer>().sprite = spriteLong;
             canHarvest = true;
 
             while (canHarvest)
@@ -74,7 +74,7 @@ public class Human : MonoBehaviour
     {
         if (canHarvest){
             FindObjectOfType<LevelManager>().AddGold(goldValue);
-            GetComponent<SpriteRenderer>().sprite = spriteShort;
+            GetComponentInChildren<SpriteRenderer>().sprite = spriteShort;
             canHarvest = false;
         }
     }
