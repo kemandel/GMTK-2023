@@ -11,6 +11,7 @@ public class TransitionUI : MonoBehaviour
     public Canvas shopCanvas;
     public GameObject dayCanvas;
     public Canvas nightCanvas;
+    public Button openShopButton;
 
     public float transitionTime;
 
@@ -49,6 +50,7 @@ public class TransitionUI : MonoBehaviour
     public IEnumerator NightUICoroutine()
     {
         shopCanvas.gameObject.SetActive(false);
+        openShopButton.gameObject.SetActive(true);
         // Fade out images for daytime
         foreach (Image i in dayCanvas.GetComponentsInChildren<Image>())
         {
