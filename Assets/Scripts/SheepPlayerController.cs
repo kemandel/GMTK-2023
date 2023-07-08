@@ -17,6 +17,9 @@ public class SheepPlayerController : MonoBehaviour
             Vector2 direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
             GetComponent<Rigidbody2D>().velocity = direction * speed;
         }
+        GetComponent<Animator>().SetBool("canMove", canMove);
+        GetComponent<Animator>().SetFloat("X", GetComponent<Rigidbody2D>().velocity.x);
+        GetComponent<Animator>().SetFloat("Y", GetComponent<Rigidbody2D>().velocity.y);
     }
 
     private void Update() {
