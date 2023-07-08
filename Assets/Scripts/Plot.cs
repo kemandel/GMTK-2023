@@ -53,6 +53,7 @@ public class Plot : MonoBehaviour
         locked = false;
         human = null;
         FindObjectOfType<LevelManager>().keys -= 1;
+        FindObjectOfType<LevelManager>().humansFreed += 1;
         return true;
     }
 
