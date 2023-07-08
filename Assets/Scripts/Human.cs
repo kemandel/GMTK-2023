@@ -29,7 +29,6 @@ public class Human : MonoBehaviour
     /// </summary>
     public int goldValue;
 
-
     /// <summary>
     /// Whether or not the human can be harvested for gold
     /// </summary>
