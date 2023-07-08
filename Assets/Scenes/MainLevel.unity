@@ -3638,7 +3638,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.8862745, g: 0.8862745, b: 0.8862745, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -4777,6 +4777,7 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: d26ddeab25ba2104e9905401627e0c26, type: 3}
   - {fileID: 8300000, guid: 882af43803459d04e99ab34af077ef55, type: 3}
+  - {fileID: 8300000, guid: c4b4550aa4b30d943b1389ed9e81131c, type: 3}
   cricketSounds:
   - {fileID: 8300000, guid: f1e5acf19666cc3459c9dc07f0dd4eb1, type: 3}
   - {fileID: 8300000, guid: f42d902484e5fd848aa7260a0a973186, type: 3}

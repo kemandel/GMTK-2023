@@ -37,6 +37,12 @@ public class Audio : MonoBehaviour
         soundEffects.clip = audioClips[1];
         soundEffects.Play();
     }
+    public void FreeHuman()
+    {
+        soundEffects.clip = audioClips[2];
+        soundEffects.Play();
+    }
+
 
     public IEnumerator NightAudio()
     {

@@ -29,6 +29,19 @@ public class Plot : MonoBehaviour
         }
     }
 
+    private Audio audioSource;
+
+
+    void Start()
+    {
+        audioSource = FindObjectOfType<Audio>();
+        // if not usable, dim the plot's color 
+        if (!usable)
+        {
+            SpriteRenderer sRenderer = GetComponent<SpriteRenderer>();
+            sRenderer.color = new Color(sRenderer.color.r, sRenderer.color.g, sRenderer.color.b, .5f);
+        }
+    }
     /// <summary>
     /// Adds a human to the plot if the plot is empty
     /// </summary>
@@ -52,20 +65,11 @@ public class Plot : MonoBehaviour
         if (Human == null) return false;
         if (FindObjectOfType<LevelManager>().keys <= 0) return false;
         Destroy(human.gameObject);
+        audioSource.FreeHuman();
         locked = false;
         human = null;
         FindObjectOfType<LevelManager>().keys -= 1;
         FindObjectOfType<LevelManager>().humansFreed += 1;
         return true;
-    }
-
-    void Start()
-    {
-        // if not usable, dim the plot's color 
-        if (!usable)
-        {
-            SpriteRenderer sRenderer = GetComponent<SpriteRenderer>();
-            sRenderer.color = new Color(sRenderer.color.r, sRenderer.color.g, sRenderer.color.b, .5f);
-        }
     }
 }
