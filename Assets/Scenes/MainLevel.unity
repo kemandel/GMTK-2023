@@ -2516,6 +2516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1986111466}
   - component: {fileID: 1986111465}
+  - component: {fileID: 1986111467}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -2537,7 +2538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldText: {fileID: 949651369}
   peopleFreedText: {fileID: 1606782814}
-  startingGold: 0
+  startingGold: 4
   humansFreed: 0
 --- !u!4 &1986111466
 Transform:
@@ -2554,6 +2555,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1986111467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986111464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86fe7e844db708b43b141c4246585a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsPerHour: 3
+  startingHourDay: 7
+  endingHourDay: 19
+  hour: 0
 --- !u!1 &2039576467
 GameObject:
   m_ObjectHideFlags: 0
