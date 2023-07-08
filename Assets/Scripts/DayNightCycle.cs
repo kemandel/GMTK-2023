@@ -22,16 +22,21 @@ public class DayNightCycle : MonoBehaviour
     /// </summary>
     [HideInInspector]
     public int hour;
+    [HideInInspector]
+    public bool day;
 
     private int nightDayTracker = 1;
     public TMP_Text clockText;
 
     private TransitionUI transitionUI;
+    private SheepPlayerController player;
     // Start is called before the first frame update
     void Start()
     {
         transitionUI = FindObjectOfType<TransitionUI>();
+        player = FindObjectOfType<SheepPlayerController>();
         hour = startingHourDay;
+        day = true;
         StartCoroutine(TimeCoroutine());
     }
 
@@ -82,15 +87,15 @@ public class DayNightCycle : MonoBehaviour
 
     void StartDay()
     {
-        Debug.Log("It's Day Time!");
-        FindObjectOfType<SheepPlayerController>().canMove = false;
+        day = true;
+        StartCoroutine(player.DayCoroutine());
         StartCoroutine(transitionUI.DayUICoroutine());
     }
 
     void StartNight()
     {
-        Debug.Log("It's Night Time!");
-        FindObjectOfType<SheepPlayerController>().canMove = true;
+        day = false;
+        StartCoroutine(player.NightCoroutine());
         StartCoroutine(transitionUI.NightUICoroutine());
     }
 }

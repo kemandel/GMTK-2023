@@ -72,7 +72,7 @@ public class Human : MonoBehaviour
     /// </summary>
     public void Harvest()
     {
-        if (canHarvest){
+        if (canHarvest && FindObjectOfType<DayNightCycle>().day){
             FindObjectOfType<LevelManager>().AddGold(goldValue);
             GetComponentInChildren<SpriteRenderer>().sprite = spriteShort;
             canHarvest = false;

@@ -6,6 +6,7 @@ public class SheepPlayerController : MonoBehaviour
 {
     public bool canMove;
     public float speed = 5f;
+    public float UIAlpha = .6f;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -27,6 +28,34 @@ public class SheepPlayerController : MonoBehaviour
                 if (hits[i].collider.CompareTag("Plot"))
                     hits[i].collider.GetComponent<Plot>().FreeHuman();
             }
+        }
+    }
+
+    public IEnumerator DayCoroutine()
+    {
+        yield return null;
+    }
+
+    /// <summary>
+    /// Fades in the control prompt and enables control at night
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator NightCoroutine()
+    {
+        canMove = true;
+        float transitionTime = FindObjectOfType<TransitionUI>().transitionTime;
+        yield return new WaitForSeconds(transitionTime/2);
+
+        float timeStart = Time.time;
+        float timePast = 0f;
+        Color oldColor = gameObject.GetComponentsInChildren<SpriteRenderer>()[1].color;
+
+        while (timePast < transitionTime/2)
+        {
+            timePast = Time.time - timeStart;
+            float ratio = timePast / (transitionTime / 2);
+            float a = Mathf.Lerp(0, 1 * UIAlpha, Mathf.Clamp01(ratio));
+            gameObject.GetComponentsInChildren<SpriteRenderer>()[1].color = new Color(oldColor.r, oldColor.g, oldColor.b, a);
         }
     }
 }

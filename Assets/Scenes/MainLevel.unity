@@ -292,6 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 0
   speed: 5
+  UIAlpha: 0.6
 --- !u!50 &54129404
 Rigidbody2D:
   serializedVersion: 4
@@ -976,6 +977,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1049,6 +1051,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 32
+  m_RefResolutionX: 640
+  m_RefResolutionY: 360
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &528661013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2088,7 +2110,7 @@ GameObject:
   - component: {fileID: 1089181925}
   - component: {fileID: 1089181924}
   m_Layer: 0
-  m_Name: arrowkey_0
+  m_Name: arrowkey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2686,6 +2708,7 @@ MonoBehaviour:
   shopCanvas: {fileID: 1733170290}
   dayCanvas: {fileID: 1580085961}
   nightCanvas: {fileID: 2067201520}
+  openShopButton: {fileID: 347763175}
   transitionTime: 3
 --- !u!1 &1580085961
 GameObject:
@@ -3526,6 +3549,7 @@ MonoBehaviour:
   startingHourDay: 7
   endingHourDay: 19
   hour: 0
+  day: 0
   clockText: {fileID: 1141195391}
 --- !u!1 &2039576467
 GameObject:
