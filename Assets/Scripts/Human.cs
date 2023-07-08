@@ -34,11 +34,14 @@ public class Human : MonoBehaviour
     /// </summary>
     private bool canHarvest;
 
+    private Audio audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
         GetComponentInChildren<SpriteRenderer>().sprite = spriteShort;
         StartCoroutine(GrowCoroutine());
+        audioManager = FindObjectOfType<Audio>();
     }
 
     /// <summary>
@@ -75,6 +78,7 @@ public class Human : MonoBehaviour
         if (canHarvest && FindObjectOfType<DayNightCycle>().day){
             FindObjectOfType<LevelManager>().AddGold(goldValue);
             GetComponentInChildren<SpriteRenderer>().sprite = spriteShort;
+            audioManager.HarvestHair();
             canHarvest = false;
         }
     }

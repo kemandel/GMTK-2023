@@ -14,13 +14,14 @@ public class HumanItemShop : MonoBehaviour
     public bool interactableTier = true;
     public bool plotFree;
     private LevelManager levelManager;
+    private Audio audioManager;
 
     private Image humanImage;
     private TMP_Text priceText;
     // Start is called before the first frame update
     void Start()
     {
-
+        audioManager = FindObjectOfType<Audio>();
         humanImage = GetComponentsInChildren<Image>()[1];
         priceText = GetComponentInChildren<TMP_Text>();
         switch (tier)
@@ -80,6 +81,7 @@ public class HumanItemShop : MonoBehaviour
     //call OnClick, only works if button is interactable 
     public void BuyHuman()
     {
+        audioManager.BuyItem();
         levelManager.AddToNextPlot(human); //why does this have a return index and also how does game know to put human in correct plot
         levelManager.AddGold(-human.basePrice);
     }

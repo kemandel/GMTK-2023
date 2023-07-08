@@ -13,12 +13,14 @@ public class KeyItemShop : MonoBehaviour
     public TMP_Text keysOwnedDayText;
     public TMP_Text keysOwnedNightText;
 
+    private Audio audioManager;
     private LevelManager levelManager;
     // Start is called before the first frame update
     void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
         keyCostText = GetComponentInChildren<TMP_Text>();
+        audioManager = FindObjectOfType<Audio>();
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class KeyItemShop : MonoBehaviour
     {
         if (keyIndex >= keyPrices.Length)
             return;
+        audioManager.BuyItem();
         levelManager.AddGold(-keyPrices[keyIndex]);
         keyIndex++;
         levelManager.keys++;
