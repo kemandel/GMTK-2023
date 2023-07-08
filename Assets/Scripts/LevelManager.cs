@@ -82,7 +82,7 @@ public class LevelManager : MonoBehaviour
     /// <summary>
     /// Returns the index of the next available plot, or -1 if no empty plot was found
     /// </summary>
-    public int PlotAvailable 
+    public int PlotUsable 
     {
         get 
         {
@@ -95,12 +95,27 @@ public class LevelManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Returns the index of the next purchaseable plot, or -1 if no plot was found
+    /// </summary>
+    public int PlotPurchaseable
+    {
+        get 
+        {
+            for (int i = 0; i < plots.Length; i++)
+            {
+                if (!plots[i].usable && plots[i].Human == null) return i;
+            }
+            return -1;
+        }
+    }
+
+    /// <summary>
     /// Adds the human to the next available plot, if there is one. Returns the int representing the plot or -1 if no plot was found
     /// </summary>
     /// <param name="human"></param>
     /// <returns></returns>
     public int AddToNextPlot(Human human){
-        int index = PlotAvailable;
+        int index = PlotUsable;
         if (index > -1){
             plots[index].AddNewHuman(human);
         }

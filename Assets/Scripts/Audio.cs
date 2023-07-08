@@ -64,20 +64,25 @@ public class Audio : MonoBehaviour
             Debug.Log("background sound object clip: " + backgroundSound.clip);
             Debug.Log("background sound clip length" + backgroundSound.clip.length);
             yield return new WaitForSeconds(time);
+            if (dayNightCycle.day) break;
             backgroundSound.Play();
             if (bonusSound <= 3)
             {
                 Debug.Log("background sound object clip in loop: " + backgroundSound.clip);
                 Debug.Log("background sound clip length in loop" + backgroundSound.clip.length);
                 yield return new WaitForSeconds(backgroundSound.clip.length);
+                if (dayNightCycle.day) break;
                 soundIndex = Random.Range(0, 3);
                 backgroundSound.clip = cricketSounds[soundIndex];
                 backgroundSound.Play();
             }
         
         }
+<<<<<<< HEAD
         */
         yield return null;
+=======
+>>>>>>> 37f848bf6ac4e1f943a97c232af5670f5a6ea5a1
     }
 
     public void DayAudio()
