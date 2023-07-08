@@ -47,7 +47,7 @@ public class Audio : MonoBehaviour
 
     public IEnumerator NightAudio()
     {
-       // StartCoroutine(FadeDayMusic());
+        // StartCoroutine(FadeDayMusic());
         /*
         while (fading)
         {
@@ -76,25 +76,12 @@ public class Audio : MonoBehaviour
                 backgroundSound.clip = cricketSounds[soundIndex];
                 backgroundSound.Play();
             }
-        
         }
-<<<<<<< HEAD
         */
         yield return null;
-=======
->>>>>>> 37f848bf6ac4e1f943a97c232af5670f5a6ea5a1
     }
 
-    public void DayAudio()
-    {
-        //StopCoroutine(NightAudio());
-        Debug.Log("day audio called");
-        StartCoroutine(FadeNightMusic());
-       // backgroundSound.clip = daySong;
-        backgroundSound.Play();
-    }
-
-    public  IEnumerator FadeDayMusic()
+    public IEnumerator FadeDayMusic()
     {
         fading = true;
         Debug.Log("animation called for fade day music ");
@@ -107,7 +94,7 @@ public class Audio : MonoBehaviour
         backgroundSound.Play();
     }
 
-    private IEnumerator FadeNightMusic()
+    public IEnumerator FadeNightMusic()
     {
         Debug.Log("animation called for fade night music");
         Debug.Log("currently playing: " + backgroundSound.clip.name);
@@ -116,5 +103,6 @@ public class Audio : MonoBehaviour
         backgroundSound.clip = daySong;
         dayFade.Play("dayFadeInMusic");
         yield return new WaitForSeconds(2);
+        backgroundSound.Play();
     }
 }

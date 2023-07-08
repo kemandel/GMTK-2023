@@ -92,23 +92,17 @@ public class DayNightCycle : MonoBehaviour
     void StartDay()
     {
         day = true;
-
-        if (runningCoroutine != null)
-        {
-            StopCoroutine(runningCoroutine);
-            Debug.Log("stopped Coroutine");
-        }
         StartCoroutine(player.DayCoroutine());
         StartCoroutine(transitionUI.DayUICoroutine());
-        audioSource.DayAudio();
+        StartCoroutine(audioSource.FadeNightMusic());
     }
 
     void StartNight()
     {
         day = false;
         runningCoroutine = StartCoroutine(audioSource.NightAudio());
+        StartCoroutine(player.NightCoroutine());
         StartCoroutine(transitionUI.NightUICoroutine());
-        //StartCoroutine(audioSource.NightAudio());
         StartCoroutine(audioSource.FadeDayMusic());
     }
 }
