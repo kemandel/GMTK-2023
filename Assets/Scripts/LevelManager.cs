@@ -56,8 +56,17 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
+        //displays how many humans to free before next tier unlocked 
+        if (humansFreed >= 0)
+            peopleFreedText.text = "TOTAL HUMANS FREED: " + humansFreed.ToString() + "/" + TIER_ONE;
+        if (humansFreed >= TIER_ONE)
+            peopleFreedText.text = "TOTAL HUMANS FREED: " + humansFreed.ToString() + "/" + TIER_TWO;
+        if (humansFreed > TIER_TWO)
+            peopleFreedText.text = "TOTAL HUMANS FREED: " + humansFreed.ToString() + "/" + TIER_THREE;
+        if (humansFreed > TIER_THREE)
+            peopleFreedText.text = "TOTAL HUMANS FREED: " + humansFreed.ToString() + "/" + TIER_FOUR;
         goldText.text = Gold.ToString();
-        peopleFreedText.text = "TOTAL HUMANS FREED: " + humansFreed.ToString();
+       // peopleFreedText.text = "TOTAL HUMANS FREED: " + humansFreed.ToString() + "/" + ;
 
         // Checks if the player clicked
         if (Input.GetMouseButtonDown(0))
