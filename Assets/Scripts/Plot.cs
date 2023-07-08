@@ -10,6 +10,11 @@ public class Plot : MonoBehaviour
     public bool usable = false;
 
     /// <summary>
+    /// Is the plot locked?
+    /// </summary>
+    private bool locked = false;
+
+    /// <summary>
     /// The human in the plot
     /// </summary>
     private Human human;
@@ -33,6 +38,20 @@ public class Plot : MonoBehaviour
         if (Human != null) return;
         Human newHuman = GameObject.Instantiate(human, this.transform.position, Quaternion.identity);
         this.human = human;
+        locked = true;
+    }
+
+    /// <summary>
+    /// Frees the human in the plot. Returns true if successful
+    /// </summary>
+    /// <returns></returns>
+    public bool FreeHuman()
+    {
+        if (Human == null) return false;
+        Destroy(Human);
+        locked = false;
+        human = null;
+        return true;
     }
 
     void Start()
