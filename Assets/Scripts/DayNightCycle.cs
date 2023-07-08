@@ -67,8 +67,6 @@ public class DayNightCycle : MonoBehaviour
             nightDayTracker++;
             hour %= 24;
 
-            Debug.Log("Current Hour: " + hour);
-
             if (hour == startingHourDay)
             {
                 StartDay();

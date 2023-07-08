@@ -15,6 +15,8 @@ public class LevelManager : MonoBehaviour
 
     public int startingGold;
 
+    public int keys = 0;
+
     /// <summary>
     /// The amount of gold the player has, accessable to other classes
     /// </summary>
