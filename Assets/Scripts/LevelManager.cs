@@ -13,6 +13,8 @@ public class LevelManager : MonoBehaviour
     public const int TIER_THREE = 35;
     public const int TIER_FOUR = 70;
 
+    public Animator fadeIn;
+
     public int startingGold;
 
     public int keys = 0;
@@ -47,6 +49,7 @@ public class LevelManager : MonoBehaviour
     private void Awake() 
     {
         plots = GameObject.FindObjectsOfType<Plot>();
+        fadeIn.SetTrigger("fadeIn");
     }
 
     private void Start()
