@@ -58,6 +58,7 @@ public class Plot : MonoBehaviour
         Color c = GetComponentsInChildren<SpriteRenderer>()[1].color;
         GetComponentsInChildren<SpriteRenderer>()[1].color = new Color(c.r, c.g, c.b, 1);
         this.human = newHuman;
+        GetComponentInChildren<Animator>().SetBool("Unlocked", false);
     }
 
     /// <summary>

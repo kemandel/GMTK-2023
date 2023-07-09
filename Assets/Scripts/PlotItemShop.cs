@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlotItemShop : MonoBehaviour
 {
-    private int[] plotPrices = new int[] { 10, 15, 20, 30, 40, 50, 60, 75, 90 };
+    private int[] plotPrices = new int[] { 10, 15, 20, 30, 40, 50, 60, 75 };
     private TMP_Text plotCost;
 
     private int plotIndex = 0;
