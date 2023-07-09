@@ -10,9 +10,9 @@ public class LevelManager : MonoBehaviour
     public TMP_Text goldText;
     public TMP_Text peopleFreedText;
     public const int TIER_ONE = 0;
-    public const int TIER_TWO = 10;
-    public const int TIER_THREE = 35;
-    public const int TIER_FOUR = 70;
+    public const int TIER_TWO = 5;
+    public const int TIER_THREE = 15;
+    public const int TIER_FOUR = 30;
 
     public Animator fadeIn;
 

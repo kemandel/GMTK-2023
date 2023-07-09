@@ -6,7 +6,7 @@ using TMPro;
 
 public class KeyItemShop : MonoBehaviour
 {
-    private int[] keyPrices = new int[] { 1, 3, 5, 9, 13, 17, 25 };
+    private int[] keyPrices = new int[] { 1, 3, 7, 11, 17, 25, 35 };
     private TMP_Text keyCostText;
 
     public int keyIndex = 0;
