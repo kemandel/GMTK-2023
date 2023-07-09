@@ -5875,6 +5875,7 @@ MonoBehaviour:
   interactableTier: 1
   plotFree: 0
   locked: {fileID: 994410658}
+  gameOverScreen: {fileID: 1925505795}
 --- !u!95 &801292495
 Animator:
   serializedVersion: 4
@@ -5942,6 +5943,18 @@ MonoBehaviour:
       - m_Target: {fileID: 801292494}
         m_TargetAssemblyTypeName: HumanItemShop, Assembly-CSharp
         m_MethodName: BuyHuman
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 801292494}
+        m_TargetAssemblyTypeName: HumanItemShop, Assembly-CSharp
+        m_MethodName: BoughtTopHuman
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6941,6 +6954,7 @@ MonoBehaviour:
   interactableTier: 1
   plotFree: 0
   locked: {fileID: 206670230}
+  gameOverScreen: {fileID: 1925505795}
 --- !u!1 &1089181922
 GameObject:
   m_ObjectHideFlags: 0
@@ -10049,6 +10063,7 @@ MonoBehaviour:
   interactableTier: 1
   plotFree: 0
   locked: {fileID: 1765046311}
+  gameOverScreen: {fileID: 1925505795}
 --- !u!95 &1710330795
 Animator:
   serializedVersion: 4
@@ -18372,6 +18387,7 @@ MonoBehaviour:
   interactableTier: 1
   plotFree: 0
   locked: {fileID: 574014576}
+  gameOverScreen: {fileID: 1925505795}
 --- !u!95 &2006476905
 Animator:
   serializedVersion: 4

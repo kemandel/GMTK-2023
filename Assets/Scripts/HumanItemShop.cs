@@ -16,6 +16,7 @@ public class HumanItemShop : MonoBehaviour
     public Image locked;
     private LevelManager levelManager;
     private Audio audioManager;
+    public GameObject gameOverScreen;
 
     private Image humanImage;
     private TMP_Text priceText;
@@ -91,5 +92,10 @@ public class HumanItemShop : MonoBehaviour
         audioManager.BuyItem();
         levelManager.AddToNextPlot(human); //why does this have a return index and also how does game know to put human in correct plot
         levelManager.AddGold(-human.basePrice);
+    }
+
+    public void BoughtTopHuman()
+    {
+        gameOverScreen.SetActive(true);
     }
 }
