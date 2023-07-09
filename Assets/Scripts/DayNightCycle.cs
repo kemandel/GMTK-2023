@@ -27,7 +27,6 @@ public class DayNightCycle : MonoBehaviour
 
     public Canvas shopCanvas;
 
-    private int nightDayTracker = 1;
     public TMP_Text clockText;
 
     private TransitionUI transitionUI;
@@ -75,10 +74,11 @@ public class DayNightCycle : MonoBehaviour
             }
 
             hour++;
-            nightDayTracker++;
             hour %= 24;
 
-            if (hour == startingHourDay)
+
+            //end night if you have no more keys or no more time
+            if (hour == startingHourDay || (!day && FindObjectOfType<LevelManager>().keys == 0))
             {
                 StartDay();
             }
