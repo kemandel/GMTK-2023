@@ -7693,7 +7693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyIndex: 0
   keysOwnedDayText: {fileID: 741470927}
-  goldImage: {fileID: 0}
+  goldImage: {fileID: 1503934947}
 --- !u!95 &1347919520
 Animator:
   serializedVersion: 4
