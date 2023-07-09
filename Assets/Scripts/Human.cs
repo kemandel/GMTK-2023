@@ -33,6 +33,10 @@ public class Human : MonoBehaviour
     /// Whether or not the human can be harvested for gold
     /// </summary>
     private bool canHarvest;
+    private DayNightCycle dayNightCycle;
+    public GameObject harvestUI;
+    GameObject hourglass;
+    GameObject exclamation;
 
     private Audio audioManager;
 
@@ -40,10 +44,34 @@ public class Human : MonoBehaviour
     void Start()
     {
         GetComponentInChildren<SpriteRenderer>().sprite = spriteShort;
+        dayNightCycle = FindObjectOfType<DayNightCycle>();
         StartCoroutine(GrowCoroutine());
         audioManager = FindObjectOfType<Audio>();
+
+        Debug.Log(harvestUI.GetComponentsInChildren<Animator>().Length);
+        hourglass = harvestUI.GetComponentsInChildren<Animator>()[0].gameObject;
+        exclamation = harvestUI.GetComponentsInChildren<Animator>()[1].gameObject;
     }
 
+    public void Update()
+    {
+        //enables hourglass and exclamation objects, make sure hourglass is always higher in order
+        if (canHarvest && dayNightCycle.day)
+        {
+            hourglass.gameObject.SetActive(false);
+            exclamation.gameObject.SetActive(true);
+        }
+        else if (!canHarvest && canHarvest && dayNightCycle.day)
+        {
+            hourglass.gameObject.SetActive(true);
+            exclamation.gameObject.SetActive(false);
+        }
+        else if (!dayNightCycle.day)
+        {
+            hourglass.gameObject.SetActive(false);
+            exclamation.gameObject.SetActive(false);
+        }
+    }
     /// <summary>
     /// Main Coroutine for growing the human's hair
     /// </summary>
