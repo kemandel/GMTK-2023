@@ -1867,18 +1867,21 @@ MonoBehaviour:
   m_text: 'Credits
 
 
-    programming maximillian mandel, anabelle mandel
+    mechanics & Systems Design: Maximillian Mandel
 
 
-    ui
-    design anabelle mandel
+    programming:
+    maximillian mandel, anabelle mandel
 
 
-    art selena qiao, dani slavin
+    ui design: anabelle mandel
 
 
-    music/sound design
-    dani slavin'
+    art
+    & animations: selena qiao, dani slavin
+
+
+    music & sound: design dani slavin'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e2af793ea9be70344970fb551c1fe085, type: 2}
   m_sharedMaterial: {fileID: 5801197530918266414, guid: e2af793ea9be70344970fb551c1fe085, type: 2}
