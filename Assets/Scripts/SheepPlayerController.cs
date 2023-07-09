@@ -32,11 +32,14 @@ public class SheepPlayerController : MonoBehaviour
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, .7f, Vector2.zero);
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position + Vector3.down * .5f, .7f);
             for (int i = 0; i < hits.Length; i++)
             {
-                if (hits[i].collider.CompareTag("Plot"))
-                    hits[i].collider.GetComponent<Plot>().FreeHuman();
+                if (hits[i].CompareTag("Plot"))
+                {
+                    hits[i].GetComponent<Plot>().FreeHuman();
+                    break;
+                }
             }
         }
     }
