@@ -18,6 +18,8 @@ public class HumanItemShop : MonoBehaviour
     private Audio audioManager;
     public GameObject gameOverScreen;
 
+    private bool gameOver;
+
     private Image humanImage;
     private TMP_Text priceText;
     // Start is called before the first frame update
@@ -96,6 +98,11 @@ public class HumanItemShop : MonoBehaviour
 
     public void BoughtTopHuman()
     {
-        gameOverScreen.SetActive(true);
+        if (!gameOver)
+        {
+            gameOverScreen.SetActive(true);
+            gameOver = true;
+        }
+        
     }
 }
