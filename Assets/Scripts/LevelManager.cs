@@ -74,9 +74,12 @@ public class LevelManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // What to do if a collider is hit where the mouse is
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward, 10);
-            if (hit.collider != null && hit.collider.CompareTag("Human"))
-                hit.collider.GetComponent<Human>().Harvest();
+            RaycastHit2D[] hits = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward, 10);
+            foreach (RaycastHit2D hit in hits)
+            {
+                if (hit.collider != null && hit.collider.CompareTag("Human"))
+                    hit.collider.GetComponent<Human>().Harvest();
+            }
         }
     }
 
