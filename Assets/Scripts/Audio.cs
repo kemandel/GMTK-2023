@@ -78,11 +78,8 @@ public class Audio : MonoBehaviour
             }
         
         }
-<<<<<<< HEAD
         */
         yield return null;
-=======
->>>>>>> 37f848bf6ac4e1f943a97c232af5670f5a6ea5a1
     }
 
     public void DayAudio()
