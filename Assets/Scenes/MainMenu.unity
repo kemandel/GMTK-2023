@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.2839966, y: -23.1401}
+  m_SizeDelta: {x: -58.5682, y: -137.2954}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &162247222
 MonoBehaviour:
@@ -181,12 +181,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "How to play:\n\n1. During the day, harvest human hair! The more you harvest,
+  m_text: "How to play:\n1. During the day, harvest human hair! The more you harvest,
     the more gold you will get. With gold you can buy new hair styles, plots of land,
     and keys!\n\n2. During the night, play as an activist sheep that believes in
     human rights, and try to save humans from the farm! \n\n3. click and scroll with
-    a mouse during the day, and use WASD and SPACE keys at night\n\nWe hope you have
-    fun\n"
+    a mouse during the day, and use WASD and SPACE keys at night\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e2af793ea9be70344970fb551c1fe085, type: 2}
   m_sharedMaterial: {fileID: 5801197530918266414, guid: e2af793ea9be70344970fb551c1fe085, type: 2}
@@ -195,8 +194,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280822323
-  m_fontColor: {r: 0.20000002, g: 0.16470589, b: 0.15686275, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -249,7 +248,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 11.6128235, y: 3.7149506, z: 16.257935, w: 9.290237}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1554,7 +1553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1051688944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1735,14 +1734,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3529412, g: 0.23529413, b: 0.19215688, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: cb1183fcdfedd9440b43b9b7ab8a738f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1841,8 +1840,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000030517578, y: -42.012398}
+  m_SizeDelta: {x: 0.0001, y: -84.0248}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1424534870
 MonoBehaviour:
@@ -1881,7 +1880,7 @@ MonoBehaviour:
     & animations: selena qiao, dani slavin
 
 
-    music & sound: design dani slavin'
+    music & sound design: dani slavin'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e2af793ea9be70344970fb551c1fe085, type: 2}
   m_sharedMaterial: {fileID: 5801197530918266414, guid: e2af793ea9be70344970fb551c1fe085, type: 2}
@@ -1890,8 +1889,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280822323
-  m_fontColor: {r: 0.1981132, g: 0.16311632, b: 0.15811676, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1908,8 +1907,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1944,7 +1943,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 3.4295654}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2085,14 +2084,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3529412, g: 0.23529413, b: 0.19215688, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: cb1183fcdfedd9440b43b9b7ab8a738f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
