@@ -69,7 +69,7 @@ public class DayNightCycle : MonoBehaviour
 
             float seconds = secondsPerHour;
 
-            if (!day && FindObjectOfType<LevelManager>().keys == 0) seconds = seconds / 2;
+            if (!day && FindObjectOfType<LevelManager>().keys == 0) seconds = seconds / 3;
 
             while (timePast < seconds)
             {
