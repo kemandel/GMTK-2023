@@ -11,6 +11,7 @@ public class KeyItemShop : MonoBehaviour
 
     public int keyIndex = 0;
     public TMP_Text keysOwnedDayText;
+    public Image goldImage;
 
     private Audio audioManager;
     private LevelManager levelManager;
@@ -31,6 +32,7 @@ public class KeyItemShop : MonoBehaviour
         else
         {
             keyCostText.text = "Sold Out!";
+            goldImage.gameObject.SetActive(false);
             gameObject.GetComponent<Button>().interactable = false;
             keyCostText.color = Color.red;
         }

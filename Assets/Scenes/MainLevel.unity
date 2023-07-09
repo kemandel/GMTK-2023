@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc8c64a70bb5684ab56ebe8ef2dc4d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldImage: {fileID: 1658393784}
 --- !u!95 &8801936
 Animator:
   serializedVersion: 4

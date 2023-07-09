@@ -11,6 +11,7 @@ public class PlotItemShop : MonoBehaviour
 
     private int plotIndex = 0;
 
+    public Image goldImage;
     private Audio audioManager;
     private LevelManager levelManager;
     // Start is called before the first frame update
@@ -29,6 +30,7 @@ public class PlotItemShop : MonoBehaviour
         else
         {
             plotCost.text = "Sold Out!";
+            goldImage.gameObject.SetActive(false);
             gameObject.GetComponent<Button>().interactable = false;
             plotCost.color = Color.red;
         }
