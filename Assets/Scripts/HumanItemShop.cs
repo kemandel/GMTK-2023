@@ -38,7 +38,7 @@ public class HumanItemShop : MonoBehaviour
                 costToUnlock = LevelManager.TIER_THREE;
                 break;
             case 4:
-                costToUnlock = LevelManager.TIER_THREE;
+                costToUnlock = LevelManager.TIER_FOUR;
                 break;
         }
         levelManager = FindObjectOfType<LevelManager>();

@@ -25,6 +25,8 @@ public class DayNightCycle : MonoBehaviour
     [HideInInspector]
     public bool day;
 
+    public Canvas shopCanvas;
+
     private int nightDayTracker = 1;
     public TMP_Text clockText;
 
@@ -95,6 +97,9 @@ public class DayNightCycle : MonoBehaviour
         StartCoroutine(transitionUI.DayUICoroutine());
         StartCoroutine(audioSource.FadeNightMusic());
         FindObjectOfType<LevelManager>().Day();
+        shopCanvas.gameObject.SetActive(true);
+        FindObjectOfType<KeyItemShop>().Day();
+        shopCanvas.gameObject.SetActive(false);
     }
 
     void StartNight()

@@ -24,15 +24,15 @@ public class SheepPlayerController : MonoBehaviour
             Vector2 direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
             GetComponent<Rigidbody2D>().velocity = direction * speed;
         }
-        GetComponent<Animator>().SetBool("canMove", canMove);
-        GetComponent<Animator>().SetFloat("X", GetComponent<Rigidbody2D>().velocity.x);
-        GetComponent<Animator>().SetFloat("Y", GetComponent<Rigidbody2D>().velocity.y);
+        GetComponentInChildren<Animator>().SetBool("canMove", canMove);
+        GetComponentInChildren<Animator>().SetFloat("X", GetComponent<Rigidbody2D>().velocity.x);
+        GetComponentInChildren<Animator>().SetFloat("Y", GetComponent<Rigidbody2D>().velocity.y);
     }
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, 1.5f, Vector2.down);
+            RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, 1f, Vector2.down);
             for (int i = 0; i < hits.Length; i++)
             {
                 if (hits[i].collider.CompareTag("Plot"))
@@ -53,7 +53,7 @@ public class SheepPlayerController : MonoBehaviour
         yield return new WaitForSeconds(transitionTime/2);
         // Reset position and animation
         transform.position = startingPos;
-        GetComponent<Animator>().SetTrigger("Reset");
+        GetComponentInChildren<Animator>().SetTrigger("Reset");
         // Fade in body
         StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[0], 1, transitionTime/2));
         // Fade in wig
@@ -69,8 +69,8 @@ public class SheepPlayerController : MonoBehaviour
     {
         float transitionTime = FindObjectOfType<TransitionUI>().transitionTime;
         yield return new WaitForSeconds(transitionTime);
-        GetComponent<Animator>().SetTrigger("Reveal");
-         StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[2], 0, .75f));
+        GetComponentInChildren<Animator>().SetTrigger("Reveal");
+        StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[2], 0, .75f));
         yield return new WaitForSeconds(transitionTime/4);
         StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[1], 1 * UIAlpha, transitionTime));
         yield return new WaitForSeconds(transitionTime/4);

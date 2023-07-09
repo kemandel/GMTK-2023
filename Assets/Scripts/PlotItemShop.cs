@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlotItemShop : MonoBehaviour
 {
-    private int[] plotPrices = new int[] { 10, 20, 30, 40 };
+    private int[] plotPrices = new int[] { 10, 15, 20, 30, 40, 50, 60, 75, 90 };
     private TMP_Text plotCost;
 
     private int plotIndex = 0;
@@ -24,17 +24,27 @@ public class PlotItemShop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        plotCost.text = plotPrices[plotIndex].ToString();
-
-        if (levelManager.Gold < plotPrices[plotIndex])
+        if (plotIndex < plotPrices.Length)
+            plotCost.text = plotPrices[plotIndex].ToString();
+        else
         {
+            plotCost.text = "Sold Out!";
             gameObject.GetComponent<Button>().interactable = false;
             plotCost.color = Color.red;
         }
-        else
+
+        if (plotIndex < plotPrices.Length)
         {
-            gameObject.GetComponent<Button>().interactable = true;
-            plotCost.color = Color.black;
+            if (levelManager.Gold < plotPrices[plotIndex])
+            {
+                gameObject.GetComponent<Button>().interactable = false;
+                plotCost.color = Color.red;
+            }
+            else
+            {
+                gameObject.GetComponent<Button>().interactable = true;
+                plotCost.color = Color.black;
+            }
         }
 
     }

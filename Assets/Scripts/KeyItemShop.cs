@@ -6,12 +6,11 @@ using TMPro;
 
 public class KeyItemShop : MonoBehaviour
 {
-    private int[] keyPrices = new int[] { 1, 3, 5, 7, 9 };
+    private int[] keyPrices = new int[] { 1, 3, 5, 9, 13, 17, 25 };
     private TMP_Text keyCostText;
 
-    private int keyIndex = 0;
+    public int keyIndex = 0;
     public TMP_Text keysOwnedDayText;
-    public TMP_Text keysOwnedNightText;
 
     private Audio audioManager;
     private LevelManager levelManager;
@@ -27,20 +26,32 @@ public class KeyItemShop : MonoBehaviour
     void Update()
     {
         keysOwnedDayText.text = levelManager.keys.ToString();
-        keysOwnedNightText.text = levelManager.keys.ToString();
-        keyCostText.text = keyPrices[keyIndex].ToString();
-
-        if (levelManager.Gold < keyPrices[keyIndex])
+        if (keyIndex < keyPrices.Length)
+            keyCostText.text = keyPrices[keyIndex].ToString();
+        else
         {
+            keyCostText.text = "Sold Out!";
             gameObject.GetComponent<Button>().interactable = false;
             keyCostText.color = Color.red;
         }
-        else
+
+        if (keyIndex < keyPrices.Length)
         {
-            gameObject.GetComponent<Button>().interactable = true;
-            keyCostText.color = Color.black;
+            if (levelManager.Gold < keyPrices[keyIndex])
+            {
+                gameObject.GetComponent<Button>().interactable = false;
+                keyCostText.color = Color.red;
+            }
+            else
+            {
+                gameObject.GetComponent<Button>().interactable = true;
+                keyCostText.color = Color.black;
+            }
         }
-           
+    }
+
+    public void Day(){
+        keyIndex = 0;
     }
     
     public void BuyKey()

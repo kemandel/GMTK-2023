@@ -6,6 +6,7 @@ using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
+    public TMP_Text keysOwnedNightText;
     public TMP_Text goldText;
     public TMP_Text peopleFreedText;
     public const int TIER_ONE = 0;
@@ -15,6 +16,7 @@ public class LevelManager : MonoBehaviour
 
     public Animator fadeIn;
 
+    public Human defaultHuman;
     public int startingGold;
     public GameObject sheep;
 
@@ -56,10 +58,13 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         gold = startingGold;
+        AddToNextPlot(defaultHuman);
     }
 
     private void Update()
     {
+        keysOwnedNightText.text = keys.ToString();
+
         //displays how many humans to free before next tier unlocked 
         if (humansFreed >= TIER_ONE)
             peopleFreedText.text = "TOTAL HUMANS FREED: " + humansFreed.ToString() + "/" + TIER_TWO;
@@ -165,6 +170,16 @@ public class LevelManager : MonoBehaviour
         foreach (SpriteRenderer s in sheep.GetComponentsInChildren<SpriteRenderer>())
         {
             StartCoroutine(FadeSpriteCoroutine(s, 1, fadeSpeed));
+        }
+
+        bool allPlotsEmpty = true;
+        foreach (Plot p in plots)
+        {
+            if (p.Human != null) allPlotsEmpty = false;
+        }
+        if (allPlotsEmpty)
+        {
+            AddToNextPlot(defaultHuman);
         }
     }
 

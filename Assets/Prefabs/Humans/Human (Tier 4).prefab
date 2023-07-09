@@ -287,9 +287,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopSprite: {fileID: 21300000, guid: 53e678d4048982c4aa8dc45f5b2a931e, type: 3}
-  growthSpeed: 3
-  basePrice: 4
-  goldValue: 1
+  growthSpeed: 20
+  basePrice: 40
+  goldValue: 20
   harvestUI: {fileID: 8232217632222298477}
   gold: {fileID: 739509726134143932}
 --- !u!1 &6578285224410077142
