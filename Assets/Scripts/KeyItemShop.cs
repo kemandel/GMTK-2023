@@ -28,7 +28,7 @@ public class KeyItemShop : MonoBehaviour
     {
         keysOwnedDayText.text = levelManager.keys.ToString();
         keysOwnedNightText.text = levelManager.keys.ToString();
-        keyCostText.text = "$" + keyPrices[keyIndex];
+        keyCostText.text = keyPrices[keyIndex].ToString();
 
         if (levelManager.Gold < keyPrices[keyIndex])
         {
