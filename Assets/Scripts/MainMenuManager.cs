@@ -8,10 +8,9 @@ public class MainMenuManager : MonoBehaviour
 {
     public Image fadeOutImage;
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        FindObjectOfType<Human>().GetComponentsInChildren<Animator>()[1].SetInteger("Skin", 3);
     }
 
     public void Play()
