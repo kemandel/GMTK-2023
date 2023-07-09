@@ -100,7 +100,7 @@ public class DayNightCycle : MonoBehaviour
     void StartNight()
     {
         day = false;
-        player.Night();
+        StartCoroutine(player.NightCoroutine());
         StartCoroutine(transitionUI.NightUICoroutine());
         StartCoroutine(audioSource.FadeDayMusic());
         FindObjectOfType<LevelManager>().Night();

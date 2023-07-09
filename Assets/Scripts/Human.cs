@@ -11,14 +11,6 @@ public class Human : MonoBehaviour
     /// <summary>
     /// The sprite of the human with short hair in the overworld
     /// </summary>
-    public Sprite spriteShort;
-    /// <summary>
-    /// The sprite of the human with long hair in the overworld
-    /// </summary>
-    public Sprite spriteLong;
-    /// <summary>
-    /// How fast the hair grows in seconds
-    /// </summary>
     public float growthSpeed;
     /// <summary>
     /// The base price of the human
@@ -28,7 +20,6 @@ public class Human : MonoBehaviour
     /// The amount of gold gained from cutting the hair
     /// </summary>
     public int goldValue;
-
     /// <summary>
     /// Whether or not the human can be harvested for gold
     /// </summary>
@@ -39,9 +30,12 @@ public class Human : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponentInChildren<SpriteRenderer>().sprite = spriteShort;
         StartCoroutine(GrowCoroutine());
         audioManager = FindObjectOfType<Audio>();
+    }
+
+    void Update(){
+        GetComponentsInChildren<Animator>()[0].SetBool("CanHarvest", canHarvest);
     }
 
     /// <summary>
@@ -59,8 +53,6 @@ public class Human : MonoBehaviour
                 yield return null;
                 timePast = Time.time - timeStart;
             }
-
-            GetComponentInChildren<SpriteRenderer>().sprite = spriteLong;
             canHarvest = true;
 
             while (canHarvest)
@@ -77,7 +69,6 @@ public class Human : MonoBehaviour
     {
         if (canHarvest && FindObjectOfType<DayNightCycle>().day){
             FindObjectOfType<LevelManager>().AddGold(goldValue);
-            GetComponentInChildren<SpriteRenderer>().sprite = spriteShort;
             audioManager.HarvestHair();
             canHarvest = false;
         }
