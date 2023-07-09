@@ -32,7 +32,7 @@ public class SheepPlayerController : MonoBehaviour
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, 1f, Vector2.down);
+            RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, .6f, Vector2.zero);
             for (int i = 0; i < hits.Length; i++)
             {
                 if (hits[i].collider.CompareTag("Plot"))

@@ -51,18 +51,26 @@ public class Human : MonoBehaviour
 
     public void Update()
     {
-        //enables hourglass and exclamation objects, make sure hourglass is always higher in order
-        if (canHarvest && dayNightCycle.day)
+        if (dayNightCycle != null)
         {
-            hourglass.gameObject.SetActive(false);
-            exclamation.gameObject.SetActive(true);
+            //enables hourglass and exclamation objects, make sure hourglass is always higher in order
+            if (canHarvest && dayNightCycle.day)
+            {
+                hourglass.gameObject.SetActive(false);
+                exclamation.gameObject.SetActive(true);
+            }
+            else if (!canHarvest && dayNightCycle.day)
+            {
+                hourglass.gameObject.SetActive(true);
+                exclamation.gameObject.SetActive(false);
+            }
+            else if (!dayNightCycle.day)
+            {
+                hourglass.gameObject.SetActive(false);
+                exclamation.gameObject.SetActive(false);
+            }
         }
-        else if (!canHarvest  && dayNightCycle.day)
-        {
-            hourglass.gameObject.SetActive(true);
-            exclamation.gameObject.SetActive(false);
-        }
-        else if (!dayNightCycle.day)
+        else 
         {
             hourglass.gameObject.SetActive(false);
             exclamation.gameObject.SetActive(false);
