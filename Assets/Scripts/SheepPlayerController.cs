@@ -37,6 +37,9 @@ public class SheepPlayerController : MonoBehaviour
     public IEnumerator DayCoroutine()
     {
         canMove = false;
+        yield return null;
+
+        /*
         float transitionTime = FindObjectOfType<TransitionUI>().transitionTime;
         yield return new WaitForSeconds(transitionTime/2);
 
@@ -52,6 +55,13 @@ public class SheepPlayerController : MonoBehaviour
             float a = Mathf.Lerp(1 * UIAlpha, 0, Mathf.Clamp01(ratio));
             gameObject.GetComponentsInChildren<SpriteRenderer>()[1].color = new Color(oldColor.r, oldColor.g, oldColor.b, a);
         }
+        */
+
+        float transitionTime = FindObjectOfType<TransitionUI>().transitionTime/2;
+
+        StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[2], 1, transitionTime));
+        StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[1], 0, transitionTime));
+
     }
 
     /// <summary>
@@ -61,6 +71,9 @@ public class SheepPlayerController : MonoBehaviour
     public IEnumerator NightCoroutine()
     {
         canMove = true;
+        yield return null;
+
+        /*
         float transitionTime = FindObjectOfType<TransitionUI>().transitionTime;
         yield return new WaitForSeconds(transitionTime/2);
 
@@ -76,5 +89,11 @@ public class SheepPlayerController : MonoBehaviour
             float a = Mathf.Lerp(0, 1 * UIAlpha, Mathf.Clamp01(ratio));
             gameObject.GetComponentsInChildren<SpriteRenderer>()[1].color = new Color(oldColor.r, oldColor.g, oldColor.b, a);
         }
+        */
+
+        float transitionTime = FindObjectOfType<TransitionUI>().transitionTime/2;
+
+        StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[2], 0, transitionTime));
+        StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[1], 1 * UIAlpha, transitionTime));
     }
 }

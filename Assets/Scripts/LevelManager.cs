@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
     public Animator fadeIn;
 
     public int startingGold;
+    public GameObject sheep;
 
     public int keys = 0;
 
@@ -144,5 +145,41 @@ public class LevelManager : MonoBehaviour
     /// <param name="value"></param>
     public void AddGold(int value){
         gold += value;
+    }
+
+    public void Night()
+    {
+        float fadeSpeed = FindObjectOfType<TransitionUI>().transitionTime / 2;
+        foreach (SpriteRenderer s in sheep.GetComponentsInChildren<SpriteRenderer>())
+        {
+            StartCoroutine(FadeSpriteCoroutine(s, 0, fadeSpeed));
+        }
+    }
+
+    public void Day()
+    {
+        float fadeSpeed = FindObjectOfType<TransitionUI>().transitionTime / 2;
+        foreach (SpriteRenderer s in sheep.GetComponentsInChildren<SpriteRenderer>())
+        {
+            StartCoroutine(FadeSpriteCoroutine(s, 1, fadeSpeed));
+        }
+    }
+
+    public static IEnumerator FadeSpriteCoroutine(SpriteRenderer renderer, float alpha, float time)
+    {
+        yield return new WaitForSeconds(time/2);
+
+        float timeStart = Time.time;
+        float timePast = 0f;
+        Color oldColor = renderer.color;
+
+        while (timePast < time)
+        {
+            yield return null;
+            timePast = Time.time - timeStart;
+            float ratio = timePast / time;
+            float a = Mathf.Lerp(oldColor.a, alpha, Mathf.Clamp01(ratio));
+            renderer.color = new Color(oldColor.r, oldColor.g, oldColor.b, a);
+        }
     }
 }

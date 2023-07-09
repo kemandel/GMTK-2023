@@ -31,7 +31,6 @@ public class DayNightCycle : MonoBehaviour
     private TransitionUI transitionUI;
     private SheepPlayerController player;
     private Audio audioSource;
-    private Coroutine runningCoroutine;
     // Start is called before the first frame update
     void Start()
     {
@@ -95,14 +94,15 @@ public class DayNightCycle : MonoBehaviour
         StartCoroutine(player.DayCoroutine());
         StartCoroutine(transitionUI.DayUICoroutine());
         StartCoroutine(audioSource.FadeNightMusic());
+        FindObjectOfType<LevelManager>().Day();
     }
 
     void StartNight()
     {
         day = false;
-        runningCoroutine = StartCoroutine(audioSource.NightAudio());
         StartCoroutine(player.NightCoroutine());
         StartCoroutine(transitionUI.NightUICoroutine());
         StartCoroutine(audioSource.FadeDayMusic());
+        FindObjectOfType<LevelManager>().Night();
     }
 }
