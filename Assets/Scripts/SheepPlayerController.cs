@@ -65,13 +65,15 @@ public class SheepPlayerController : MonoBehaviour
     /// Fades in the control prompt and enables control at night
     /// </summary>
     /// <returns></returns>
-    public void Night()
+    public IEnumerator NightCoroutine()
     {
-        canMove = true;
-
-        float transitionTime = FindObjectOfType<TransitionUI>().transitionTime/2;
-
-        StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[2], 0, transitionTime));
+        float transitionTime = FindObjectOfType<TransitionUI>().transitionTime;
+        yield return new WaitForSeconds(transitionTime);
+        GetComponent<Animator>().SetTrigger("Reveal");
+         StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[2], 0, .75f));
+        yield return new WaitForSeconds(transitionTime/4);
         StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[1], 1 * UIAlpha, transitionTime));
+        yield return new WaitForSeconds(transitionTime/4);
+        canMove = true;
     }
 }

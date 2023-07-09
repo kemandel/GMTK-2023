@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4092053268375841294}
   - component: {fileID: 7911747995666050748}
+  - component: {fileID: 3540043829310252625}
   m_Layer: 0
   m_Name: Hair
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 508ca7aaa4157b44eafe70cced902683, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5f81b46d8b3d7804e9038ff6b510789b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,6 +85,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3540043829310252625
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469542936613534793}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 70ca5fb714b231849978bee937d22f6f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4022457457913468374
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,8 +181,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopSprite: {fileID: 21300000, guid: 53e678d4048982c4aa8dc45f5b2a931e, type: 3}
-  spriteShort: {fileID: 21300000, guid: 96e4e51c9be70b940b7f72d81ac4998e, type: 3}
-  spriteLong: {fileID: 21300000, guid: 508ca7aaa4157b44eafe70cced902683, type: 3}
   growthSpeed: 3
   basePrice: 4
   goldValue: 1
@@ -176,6 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3765586564631060146}
   - component: {fileID: 8045460828076030777}
+  - component: {fileID: 9100256155826155296}
   m_Layer: 0
   m_Name: Clothes
   m_TagString: Untagged
@@ -239,7 +259,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: cb41b51017564184db8f029b136d5159, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a9a59aaa28875c44695c63c29346decd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -250,6 +270,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &9100256155826155296
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6578285224410077142}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd67402698738fc44a0613bca18e34a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7517626988540689587
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4095156643793459428}
   - component: {fileID: 741058497550425719}
+  - component: {fileID: 8603745296203318099}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -334,6 +375,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8603745296203318099
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517626988540689587}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3713714f8f9e94b4a9d5224731506fb4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4263301149840051935
 PrefabInstance:
   m_ObjectHideFlags: 0
