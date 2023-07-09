@@ -149,7 +149,7 @@ public class LevelManager : MonoBehaviour
 
     public void Night()
     {
-        float fadeSpeed = FindObjectOfType<TransitionUI>().transitionTime / 2;
+        float fadeSpeed = FindObjectOfType<TransitionUI>().transitionTime;
         foreach (SpriteRenderer s in sheep.GetComponentsInChildren<SpriteRenderer>())
         {
             StartCoroutine(FadeSpriteCoroutine(s, 0, fadeSpeed));
@@ -158,7 +158,7 @@ public class LevelManager : MonoBehaviour
 
     public void Day()
     {
-        float fadeSpeed = FindObjectOfType<TransitionUI>().transitionTime / 2;
+        float fadeSpeed = FindObjectOfType<TransitionUI>().transitionTime;
         foreach (SpriteRenderer s in sheep.GetComponentsInChildren<SpriteRenderer>())
         {
             StartCoroutine(FadeSpriteCoroutine(s, 1, fadeSpeed));
@@ -167,8 +167,6 @@ public class LevelManager : MonoBehaviour
 
     public static IEnumerator FadeSpriteCoroutine(SpriteRenderer renderer, float alpha, float time)
     {
-        yield return new WaitForSeconds(time/2);
-
         float timeStart = Time.time;
         float timePast = 0f;
         Color oldColor = renderer.color;

@@ -9728,6 +9728,7 @@ MonoBehaviour:
   peopleFreedText: {fileID: 1606782814}
   fadeIn: {fileID: 748656330}
   startingGold: 4
+  sheep: {fileID: 278030409}
   keys: 0
   humansFreed: 0
 --- !u!4 &1986111466
