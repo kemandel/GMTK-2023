@@ -41,6 +41,8 @@ public class Human : MonoBehaviour
         Debug.Log(harvestUI.GetComponentsInChildren<Animator>().Length);
         hourglass = harvestUI.GetComponentsInChildren<Animator>()[0].gameObject;
         exclamation = harvestUI.GetComponentsInChildren<Animator>()[1].gameObject;
+        hourglass.gameObject.SetActive(false);
+        exclamation.gameObject.SetActive(false);
     }
 
     public void Update()
@@ -48,11 +50,13 @@ public class Human : MonoBehaviour
         //enables hourglass and exclamation objects, make sure hourglass is always higher in order
         if (canHarvest && dayNightCycle.day)
         {
+            Debug.Log("exclamatoin should be on");
             hourglass.gameObject.SetActive(false);
             exclamation.gameObject.SetActive(true);
         }
-        else if (!canHarvest && canHarvest && dayNightCycle.day)
+        else if (!canHarvest  && dayNightCycle.day)
         {
+            Debug.Log("hourglass shold be on");
             hourglass.gameObject.SetActive(true);
             exclamation.gameObject.SetActive(false);
         }
