@@ -13,6 +13,7 @@ public class HumanItemShop : MonoBehaviour
     private int costToUnlock;
     public bool interactableTier = true;
     public bool plotFree;
+    public Image locked;
     private LevelManager levelManager;
     private Audio audioManager;
 
@@ -21,6 +22,7 @@ public class HumanItemShop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        locked.gameObject.SetActive(true);
         audioManager = FindObjectOfType<Audio>();
         humanImage = GetComponentsInChildren<Image>()[1];
         priceText = GetComponentInChildren<TMP_Text>();
@@ -43,7 +45,7 @@ public class HumanItemShop : MonoBehaviour
 
         //update shop icon with human info
         humanImage.sprite = human.shopSprite;
-        priceText.text = "$" + human.basePrice;
+        priceText.text =  human.basePrice.ToString();
 
         if (costToUnlock > levelManager.humansFreed) //haven't unlocked this option yet
         {
@@ -54,12 +56,17 @@ public class HumanItemShop : MonoBehaviour
 
     private void Update()
     {
-
         //unlock this tier
-        if (!interactableTier && costToUnlock <= levelManager.humansFreed) 
+        if (!interactableTier && costToUnlock <= levelManager.humansFreed)
         {
             interactableTier = true;
         }
+
+        //lock UI for if you can't buy this hair yet
+        if (!interactableTier)
+            locked.gameObject.SetActive(true);
+        else
+            locked.gameObject.SetActive(false);
 
         if (levelManager.PlotUsable != -1)
             plotFree = true;
