@@ -67,7 +67,11 @@ public class DayNightCycle : MonoBehaviour
             float timeStart = Time.time;
             float timePast = 0f;
 
-            while (timePast < secondsPerHour)
+            float seconds = secondsPerHour;
+
+            if (!day && FindObjectOfType<LevelManager>().keys == 0) seconds = seconds / 2;
+
+            while (timePast < seconds)
             {
                 yield return null;
                 timePast = Time.time - timeStart;
@@ -78,7 +82,7 @@ public class DayNightCycle : MonoBehaviour
 
 
             //end night if you have no more keys or no more time
-            if (hour == startingHourDay || (!day && FindObjectOfType<LevelManager>().keys == 0))
+            if (hour == startingHourDay)
             {
                 StartDay();
             }
