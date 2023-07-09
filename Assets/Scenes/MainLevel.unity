@@ -442,7 +442,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9ba0aa2d1ddda39419d5355369e37f11, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3011,7 +3011,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9ba0aa2d1ddda39419d5355369e37f11, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4819,7 +4819,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9ba0aa2d1ddda39419d5355369e37f11, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5580,7 +5580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &748656327
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6052,7 +6052,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9ba0aa2d1ddda39419d5355369e37f11, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7512,7 +7512,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9ba0aa2d1ddda39419d5355369e37f11, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7703,6 +7703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f426e571de3fa2f45bb12955ac0726f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyIndex: 0
   keysOwnedDayText: {fileID: 741470927}
 --- !u!95 &1347919520
 Animator:
@@ -7883,7 +7884,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9ba0aa2d1ddda39419d5355369e37f11, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8515,7 +8516,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9ba0aa2d1ddda39419d5355369e37f11, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9164,7 +9165,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9ba0aa2d1ddda39419d5355369e37f11, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9353,7 +9354,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9ba0aa2d1ddda39419d5355369e37f11, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -17356,10 +17357,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a3b2e76e342b6349b7c681de92af725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keysOwnedNightText: {fileID: 741470927}
+  keysOwnedNightText: {fileID: 45871698}
   goldText: {fileID: 949651369}
   peopleFreedText: {fileID: 1606782814}
   fadeIn: {fileID: 748656330}
+  defaultHuman: {fileID: 8870351784437696611, guid: 916e9fd36134aa6449f71914b96f31d3, type: 3}
   startingGold: 4
   sheep: {fileID: 278030409}
   keys: 0
@@ -17396,6 +17398,7 @@ MonoBehaviour:
   endingHourDay: 20
   hour: 0
   day: 0
+  shopCanvas: {fileID: 1733170290}
   clockText: {fileID: 1141195391}
 --- !u!1 &1990639610
 GameObject:
@@ -17946,7 +17949,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9ba0aa2d1ddda39419d5355369e37f11, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
