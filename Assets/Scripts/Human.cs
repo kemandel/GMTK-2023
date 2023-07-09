@@ -24,10 +24,13 @@ public class Human : MonoBehaviour
     /// Whether or not the human can be harvested for gold
     /// </summary>
     private bool canHarvest;
+
+
     private DayNightCycle dayNightCycle;
     public GameObject harvestUI;
-    GameObject hourglass;
-    GameObject exclamation;
+    private GameObject hourglass;
+    private  GameObject exclamation;
+    public GameObject gold;
 
     private Audio audioManager;
 
@@ -43,6 +46,7 @@ public class Human : MonoBehaviour
         exclamation = harvestUI.GetComponentsInChildren<Animator>()[1].gameObject;
         hourglass.gameObject.SetActive(false);
         exclamation.gameObject.SetActive(false);
+        gold.gameObject.SetActive(false);
     }
 
     public void Update()
@@ -50,13 +54,11 @@ public class Human : MonoBehaviour
         //enables hourglass and exclamation objects, make sure hourglass is always higher in order
         if (canHarvest && dayNightCycle.day)
         {
-            Debug.Log("exclamatoin should be on");
             hourglass.gameObject.SetActive(false);
             exclamation.gameObject.SetActive(true);
         }
         else if (!canHarvest  && dayNightCycle.day)
         {
-            Debug.Log("hourglass shold be on");
             hourglass.gameObject.SetActive(true);
             exclamation.gameObject.SetActive(false);
         }
@@ -98,8 +100,16 @@ public class Human : MonoBehaviour
     {
         if (canHarvest && FindObjectOfType<DayNightCycle>().day){
             FindObjectOfType<LevelManager>().AddGold(goldValue);
+            StartCoroutine(GainGold());
             audioManager.HarvestHair();
             canHarvest = false;
         }
+    }
+
+    private IEnumerator GainGold()
+    {
+        gold.SetActive(true);
+        yield return new WaitForSeconds(2);
+        gold.SetActive(false);
     }
 }
