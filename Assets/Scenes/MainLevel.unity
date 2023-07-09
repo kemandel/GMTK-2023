@@ -18057,7 +18057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fe7e844db708b43b141c4246585a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsPerHour: 2
+  secondsPerHour: 4
   startingHourDay: 4
   endingHourDay: 20
   hour: 0
