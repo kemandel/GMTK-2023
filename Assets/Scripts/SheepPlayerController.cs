@@ -8,6 +8,13 @@ public class SheepPlayerController : MonoBehaviour
     public float speed = 5f;
     public float UIAlpha = .6f;
 
+    private Vector3 startingPos;
+
+    void Start()
+    {
+        startingPos = transform.position;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -37,44 +44,34 @@ public class SheepPlayerController : MonoBehaviour
     public IEnumerator DayCoroutine()
     {
         canMove = false;
+
         float transitionTime = FindObjectOfType<TransitionUI>().transitionTime;
+        // Fade out body
+        StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[0], 0, transitionTime/2));
+        // Fade out UI
+        StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[1], 0, transitionTime/2));
         yield return new WaitForSeconds(transitionTime/2);
+        // Reset position and animation
+        transform.position = startingPos;
+        GetComponent<Animator>().SetTrigger("Reset");
+        // Fade in body
+        StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[0], 1, transitionTime/2));
+        // Fade in wig
+        StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[2], 1, transitionTime/2));
 
-        float timeStart = Time.time;
-        float timePast = 0f;
-        Color oldColor = gameObject.GetComponentsInChildren<SpriteRenderer>()[1].color;
-
-        while (timePast < transitionTime/2)
-        {
-            yield return null;
-            timePast = Time.time - timeStart;
-            float ratio = timePast / (transitionTime / 2);
-            float a = Mathf.Lerp(1 * UIAlpha, 0, Mathf.Clamp01(ratio));
-            gameObject.GetComponentsInChildren<SpriteRenderer>()[1].color = new Color(oldColor.r, oldColor.g, oldColor.b, a);
-        }
     }
 
     /// <summary>
     /// Fades in the control prompt and enables control at night
     /// </summary>
     /// <returns></returns>
-    public IEnumerator NightCoroutine()
+    public void Night()
     {
         canMove = true;
-        float transitionTime = FindObjectOfType<TransitionUI>().transitionTime;
-        yield return new WaitForSeconds(transitionTime/2);
 
-        float timeStart = Time.time;
-        float timePast = 0f;
-        Color oldColor = gameObject.GetComponentsInChildren<SpriteRenderer>()[1].color;
+        float transitionTime = FindObjectOfType<TransitionUI>().transitionTime/2;
 
-        while (timePast < transitionTime/2)
-        {
-            yield return null;
-            timePast = Time.time - timeStart;
-            float ratio = timePast / (transitionTime / 2);
-            float a = Mathf.Lerp(0, 1 * UIAlpha, Mathf.Clamp01(ratio));
-            gameObject.GetComponentsInChildren<SpriteRenderer>()[1].color = new Color(oldColor.r, oldColor.g, oldColor.b, a);
-        }
+        StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[2], 0, transitionTime));
+        StartCoroutine(LevelManager.FadeSpriteCoroutine(GetComponentsInChildren<SpriteRenderer>()[1], 1 * UIAlpha, transitionTime));
     }
 }
